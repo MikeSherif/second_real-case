@@ -165,6 +165,7 @@
 
 .admin-message-container {
     align-self: flex-end;
+    align-items: flex-end;
 }
 
 .admin-message {

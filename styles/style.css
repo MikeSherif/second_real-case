@@ -1,0 +1,193 @@
+
+.container{
+    width: 1300px;
+    margin: auto;
+}
+
+.sculpture{
+    position: relative;
+    z-index: 0;
+}
+
+.sculpture_orientation{
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    padding-top: 25px;
+}
+
+.sculpture__links{
+    box-sizing: border-box;
+    width: 183px;
+    height: 300px;
+    background-color: #F0F5FA;
+    border-radius: 20px;
+}
+
+.sculpture__links-list{
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    padding: 39px 0 0 26px;
+    list-style: none;
+}
+
+.sculpture__links-list-item-text{
+    font-family: "Inter", sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.68px;
+    text-decoration: none;
+}
+
+.appeal__container-info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.appeal__container{
+    width: 1080px;
+    height: 560px;
+    box-sizing: border-box;
+}
+
+.appeal__container-info-left-side {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.appeal__button-back {
+    width: 46px;
+    height: 46px;
+    border: none;
+    border-radius: 16px;
+    background: rgb(229, 0, 22);
+    align-self: center;
+}
+
+.appeal__number-case {
+    color: rgb(0, 0, 0);
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 78.73px;
+    margin: 0;
+}
+
+.appeal__container-info-right-side {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    align-self: center;
+}
+
+.appeal__admin-img {
+    width: 46px;
+    height: 46px;
+    box-shadow: 4px 4px 44px 0 rgba(39, 49, 74, 0.12);
+    background: url('../images/asya.png') center ;
+    border-radius: 50%;
+}
+
+.appeal__admin-name {
+    color: rgb(39, 49, 74);
+    font-family: Onest, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 110%;
+    margin: 0;
+    align-self: center;
+}
+
+.appeal__container-chat {
+    background-color: #E9F3F9;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.appeal__container-chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 457px;
+    max-height: 460px;
+    overflow-y: scroll;
+    padding: 30px 50px 0 50px;
+}
+
+.user-message-container{
+
+}
+
+.message-data {
+    color: rgb(187, 189, 195);
+    font-family: Onest, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: left;
+    margin: 0;
+}
+
+.user-message-container, .admin-message-container  {
+    width: max-content;
+    max-width: 695px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.user-message-container {
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: #FFFFFF;
+    border-radius: 4px 20px 20px 20px;
+    padding: 10px 20px 10px 20px;
+}
+
+.user-message-text{
+    color: rgb(39, 49, 74);
+    font-family: Onest, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: left;
+    margin: 0;
+}
+
+.admin-message-container {
+    align-self: flex-end;
+}
+
+.admin-message {
+    background-color: #27314A;
+    border-radius: 20px 4px 20px 20px;
+    padding: 10px 17px 10px 20px;
+}
+
+.admin-message-text {
+    color: rgb(255, 255, 255);
+    font-family: Onest, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: right;
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+

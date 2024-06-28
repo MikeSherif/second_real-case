@@ -49,6 +49,7 @@
 .appeal__container{
     width: 1080px;
     box-sizing: border-box;
+    margin-top: -15px;
 }
 
 .appeal__container-info-left-side {

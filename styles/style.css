@@ -66,6 +66,7 @@
     border-radius: 16px;
     background: rgb(229, 0, 22);
     align-self: center;
+    cursor: pointer;
 }
 
 .appeal__number-case {

@@ -252,6 +252,46 @@
     cursor: pointer;
 }
 
+.admin-message-file-container {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+}
+
+.admin-message-file-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.admin-message-file-thumbnail {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.admin-message-file-name {
+    color: rgb(255, 255, 255);
+    font-family: Onest, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: right;
+    margin: 0;
+    text-decoration: none;
+}
+
+.admin-message-file-details {
+    color: rgb(255, 255, 255);
+    font-family: Onest, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    text-align: right;
+    margin: 0;
+}
 
 
 

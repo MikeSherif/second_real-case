@@ -130,32 +130,68 @@
         <div class="admin-message-container-element">
             <p class="message-data">10 марта 2022 - 11:15</p>
             <div class="admin-message">
-                <p class="admin-message-text">But I must explain to you how all this mistaken idea
-                    of denouncing pleasure and praising pain was born
-                    and I will give you a complete account of the system,
-                    and expou</p>
+                <p class="admin-message-text"></p>
+                <div class="admin-message-file-container" style="display: none;">
+                    <div class="admin-message-file-info">
+                        <a class="admin-message-file-name" download></a>
+                        <span class="admin-message-file-details"></span>
+                    </div>
+                    <a class="admin-message-file-thumbnail-link" download>
+                        <img class="admin-message-file-thumbnail" width="36" height="36" alt="thumbnail">
+                    </a>
+                </div>
             </div>
         </div>
     </template>
     <script>
         const adminMessageContainer = document.querySelector('.admin-message-container');
         const sendMessageButton = document.querySelector('.send_message-button');
-        function addMessage(adminMessageValue) {
+        const fileInput = document.querySelector('#upload_img');
+
+        function addMessage(adminMessageValue, file) {
             const adminMessageTemplate = document.querySelector('#admin-message').content;
             const adminMessageElement = adminMessageTemplate.querySelector('.admin-message-container-element').cloneNode(true);
 
             adminMessageElement.querySelector('.admin-message-text').textContent = adminMessageValue;
 
+            if (file) {
+                const fileContainer = adminMessageElement.querySelector('.admin-message-file-container');
+                const fileNameElement = fileContainer.querySelector('.admin-message-file-name');
+                const fileDetailsElement = fileContainer.querySelector('.admin-message-file-details');
+                const thumbnailElement = fileContainer.querySelector('.admin-message-file-thumbnail');
+                const thumbnailLinkElement = fileContainer.querySelector('.admin-message-file-thumbnail-link');
+
+                const fileName = file.name;
+                const fileExtension = fileName.split('.').pop();
+                const fileSize = (file.size / 1024).toFixed(1) + ' kb';
+
+                fileNameElement.textContent = fileName;
+                fileNameElement.href = URL.createObjectURL(file);
+                fileDetailsElement.textContent = `${fileExtension} · ${fileSize}`;
+                thumbnailElement.src = URL.createObjectURL(file);
+                thumbnailLinkElement.href = URL.createObjectURL(file);
+
+                fileContainer.style.display = 'flex';
+            }
+
             adminMessageContainer.append(adminMessageElement);
         }
 
         sendMessageButton.addEventListener('click', function () {
-            const adminMessage = document.querySelector('.send_message-text');
+            const adminMessage = document.querySelector('.send_message-text').value.trim();
+            const file = fileInput.files[0];
 
-            addMessage(adminMessage.value);
+            if (!adminMessage && !file) {
+                alert('Введите сообщение или выберите файл.');
+                return;
+            }
 
-            adminMessage.value = '';
+            addMessage(adminMessage, file);
+
+            document.querySelector('.send_message-text').value = '';
+            fileInput.value = '';
         });
+
 
     </script>
 </body>

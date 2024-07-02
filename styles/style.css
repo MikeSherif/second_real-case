@@ -135,7 +135,7 @@
     margin: 0;
 }
 
-.user-message-container, .admin-message-container  {
+.user-message-container-element, .admin-message-container-element  {
     width: max-content;
     max-width: 695px;
     display: flex;
@@ -144,6 +144,9 @@
 }
 
 .user-message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     align-self: flex-start;
 }
 
@@ -164,7 +167,13 @@
 }
 
 .admin-message-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
     align-self: flex-end;
+}
+
+.admin-message-container-element{
     align-items: flex-end;
 }
 
@@ -205,7 +214,7 @@
 .send_message-text {
     border: none;
     height: 30px;
-    width: 100%;
+    width: 60em;
 }
 
 .send_message-button {

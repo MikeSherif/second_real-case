@@ -100,7 +100,7 @@
 
 
                         </div>
-                        <form action="" class="appeal__container-chat-form-submission">
+                        <form action="#" class="appeal__container-chat-form-submission">
                             <input type="file" id="upload_img">
                             <label for="upload_img">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -138,9 +138,24 @@
         </div>
     </template>
     <script>
+        const adminMessageContainer = document.querySelector('.admin-message-container');
+        const sendMessageButton = document.querySelector('.send_message-button');
+        function addMessage(adminMessageValue) {
+            const adminMessageTemplate = document.querySelector('#admin-message').content;
+            const adminMessageElement = adminMessageTemplate.querySelector('.admin-message-container-element').cloneNode(true);
 
+            adminMessageElement.querySelector('.admin-message-text').textContent = adminMessageValue;
 
+            adminMessageContainer.append(adminMessageElement);
+        }
 
+        sendMessageButton.addEventListener('click', function () {
+            const adminMessage = document.querySelector('.send_message-text');
+
+            addMessage(adminMessage.value);
+
+            adminMessage.value = '';
+        });
 
     </script>
 </body>

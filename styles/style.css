@@ -171,6 +171,7 @@
     flex-direction: column;
     gap: 15px;
     align-self: flex-end;
+    align-items: flex-end;
 }
 
 .admin-message-container-element{
@@ -178,6 +179,7 @@
 }
 
 .admin-message {
+    max-width: 695px;
     background-color: #27314A;
     border-radius: 20px 4px 20px 20px;
     padding: 10px 17px 10px 20px;

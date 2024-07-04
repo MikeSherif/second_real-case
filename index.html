@@ -171,7 +171,12 @@
                 thumbnailElement.src = URL.createObjectURL(file);
                 thumbnailLinkElement.href = URL.createObjectURL(file);
 
+                if ( (fileExtension !== "png") && (fileExtension !== 'webp') && (fileExtension !== 'jpeg')  && (fileExtension !== 'ico') && (fileExtension !== 'svg') && (fileExtension !== 'jpg')) {
+                    fileContainer.querySelector('.admin-message-file-thumbnail-link').style.display = 'none';
+                }
+
                 fileContainer.style.display = 'flex';
+
             }
 
             adminMessageContainer.append(adminMessageElement);

@@ -233,6 +233,10 @@
     position: absolute;
 }
 
+.upload_img {
+    cursor: pointer;
+}
+
 .send_message-text {
     border: none;
     height: 30px;

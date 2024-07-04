@@ -175,6 +175,7 @@
             }
 
             adminMessageContainer.append(adminMessageElement);
+            adminMessageElement.scrollIntoView({ block: "center", behavior: "smooth" });
         }
 
         sendMessageButton.addEventListener('click', function () {
@@ -191,8 +192,6 @@
             document.querySelector('.send_message-text').value = '';
             fileInput.value = '';
         });
-
-
     </script>
 </body>
 </html>

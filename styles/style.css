@@ -239,6 +239,10 @@
     width: 60em;
 }
 
+.send_message-text:focus {
+    outline: none;
+}
+
 .send_message-button {
     width: 38px;
     height: 38px;
@@ -261,7 +265,7 @@
 .admin-message-file-info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     gap: 4px;
 }
 

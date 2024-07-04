@@ -108,6 +108,7 @@
                                 <path d="M12 15.75C13.864 15.75 15.375 14.239 15.375 12.375C15.375 10.511 13.864 9 12 9C10.136 9 8.625 10.511 8.625 12.375C8.625 14.239 10.136 15.75 12 15.75Z" stroke="#27314A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             </label>
+                            <span id="file_name_display" style="display: none;"></span>
                             <label>
                                 <input type="text" placeholder="Ваше сообщение" class="send_message-text">
                             </label>
@@ -147,6 +148,20 @@
         const adminMessageContainer = document.querySelector('.admin-message-container');
         const sendMessageButton = document.querySelector('.send_message-button');
         const fileInput = document.querySelector('#upload_img');
+        const fileLabel = document.querySelector('label[for="upload_img"]');
+        const fileNameDisplay = document.querySelector('#file_name_display');
+
+        fileInput.addEventListener('change', () => {
+            fileNameDisplay.innerHTML = '';
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const fileName = document.createTextNode(file.name);
+                fileNameDisplay.appendChild(fileName);
+                fileNameDisplay.style.display = 'block';
+            } else {
+                fileNameDisplay.style.display = 'none';
+            }
+        });
 
         function addMessage(adminMessageValue, file) {
             const adminMessageTemplate = document.querySelector('#admin-message').content;
@@ -171,12 +186,11 @@
                 thumbnailElement.src = URL.createObjectURL(file);
                 thumbnailLinkElement.href = URL.createObjectURL(file);
 
-                if ( (fileExtension !== "png") && (fileExtension !== 'webp') && (fileExtension !== 'jpeg')  && (fileExtension !== 'ico') && (fileExtension !== 'svg') && (fileExtension !== 'jpg')) {
-                    fileContainer.querySelector('.admin-message-file-thumbnail-link').style.display = 'none';
+                if (!['png', 'webp', 'jpeg', 'ico', 'svg', 'jpg'].includes(fileExtension)) {
+                    thumbnailLinkElement.style.display = 'none';
                 }
 
                 fileContainer.style.display = 'flex';
-
             }
 
             adminMessageContainer.append(adminMessageElement);
@@ -196,7 +210,11 @@
 
             document.querySelector('.send_message-text').value = '';
             fileInput.value = '';
+            fileNameDisplay.innerHTML = '';
+            fileNameDisplay.style.display = 'none';
         });
+
+
     </script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 .container{
-    width: 1300px;
-    margin: auto;
+
 }
 
 .sculpture{
@@ -11,8 +10,9 @@
 .sculpture_orientation{
     display: flex;
     flex-direction: row;
-    gap: 70px;
+    gap: 32px;
     padding-top: 25px;
+    justify-content: center;
 }
 
 .sculpture__links{
@@ -47,7 +47,7 @@
 }
 
 .appeal__container{
-    width: 1080px;
+    width: clamp(12.5rem, -9.3254rem + 93.1217vw, 67.5rem);
     box-sizing: border-box;
     margin-top: -15px;
 }
@@ -119,7 +119,7 @@
     max-height: 460px;
     overflow-y: auto;
     padding: 30px 10px 0 50px;
-    width: 984px;
+    width: clamp(6.5rem, -15.3254rem + 93.1217vw, 61.5rem);
 }
 
 .appeal__container-chat-messages::-webkit-scrollbar{
@@ -157,7 +157,7 @@
 
 .user-message-container-element, .admin-message-container-element  {
     width: max-content;
-    max-width: 695px;
+    max-width: clamp(4.375rem, -11.126rem + 66.1376vw, 43.4375rem);
     display: flex;
     flex-direction: column;
     gap: 7px;
@@ -199,7 +199,7 @@
 }
 
 .admin-message {
-    max-width: 695px;
+    max-width: clamp(4.375rem, -11.126rem + 66.1376vw, 43.4375rem);
     background-color: #27314A;
     border-radius: 20px 4px 20px 20px;
     padding: 10px 17px 10px 20px;
@@ -240,7 +240,7 @@
 .send_message-text {
     border: none;
     height: 30px;
-    width: 60em;
+    width: clamp(6.25rem, -3.6706rem + 42.328vw, 31.25rem);
 }
 
 .send_message-text:focus {
